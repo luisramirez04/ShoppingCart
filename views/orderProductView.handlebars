@@ -1,0 +1,41 @@
+<div>
+    <div class="table-responsive">
+        <form method="POST" action="/shopping/products/{{data.id}}">
+            <table class="table table-condensed">
+                <thead>
+                    <tr>
+                        <th>Product Number</th>
+                        <th>Product Name</th>
+                        <th>Product Description</th>
+                        <th>Product Price</th>
+                        <th>Product Quantity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{data.productNumber}}</td>
+                        <td>{{data.productName}}</td>
+                        <td>{{data.productDescription}}</td>
+                        <td>{{data.productPrice}}</td>
+                        <td>{{data.productQuantity}}</td>
+                        </td>
+                    </tr>
+                </tbody>
+                 <tfoot>
+                <tr>
+                    <td><label for="oquantity">Order Quantity</label></td>
+                    <td><input type="text" name="oquantity" required></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="submit" value="Order" class="btn btn-success">
+                        <input type="button" value="Cancel" class="btn btn-danger"
+                            class="cancel" onclick="cancelOrder()">
+                    </td>
+                </tr>
+            </tfoot>
+            </table>
+        </form>
+    </div>
+</div>

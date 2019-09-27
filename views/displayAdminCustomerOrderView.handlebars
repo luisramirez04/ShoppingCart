@@ -1,0 +1,28 @@
+<div>
+    <h2>Customer {{data.0.orderCustomer}}'s orders</h2>
+    <div class="table-responsive">
+        <table class="table table-condensed">
+            <thead>
+                <tr>
+                    <th>Order Date</th>
+                    <th>Order Quantity</th>
+                    <th>Order Product</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each data}}
+                <tr>
+                    <td>{{this.orderDate}}</td>
+                    <td>{{this.orderQuantity}}</td>
+                    <td>{{this.orderProduct.productName}}</td>
+                    </td>
+                    <td>
+                        <a href="/customers/{{this.orderCustomer}}/edit/{{this.id}}">Edit</a>
+                        <a href="/customers/{{this.orderCustomer}}/delete/{{this.id}}">Delete</a>
+                    </td>
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>

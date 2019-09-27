@@ -1,0 +1,37 @@
+<div>
+    <input type="text" placeholder="Search Products" onkeyup="filterProducts()">
+    <div class="table-responsive">
+        <table class="table table-condensed">
+            <thead>
+                <tr>
+                    <th>Product Number</th>
+                    <th>Product Name</th>
+                    <th>Product Description</th>
+                    <th>Product Price</th>
+                    <th>Product Quantity</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each data}}
+                <tr>
+                    <td>{{this.productNumber}}</td>
+                    <td class="productName">{{this.productName}}</td>
+                    <td>{{this.productDescription}}</td>
+                    <td>{{this.productPrice}}</td>
+                    <td>{{this.productQuantity}}</td>
+                    </td>
+                    <td>
+                        <a href="/products/edit/{{this.id}}">Edit</a>
+                        <a href="/products/delete/{{this.id}}">Delete</a>
+                    </td>
+                </tr>
+            {{/each}}
+            </tbody>
+            <tfoot>
+                <tr><td>
+                    <button class="btn btn-primary" onclick="addProduct();">Add</button>
+                </td></tr>
+            </tfoot>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,43 @@
+<div class="table responsive">
+    <form method="POST" action="/customers/{{data.orderCustomer}}/edit/{{data.id}}">
+        <table class="table table-condensed">
+            <tbody>
+                <tr>
+                    <th width="200">Order Date: </td>
+                    <td>{{data.orderDate}}</td>
+                </tr>
+                <tr>
+                    <th>Order Quantity: </th>
+                    <td><input type="text" name="oquant" required size="40"
+                        value="{{data.orderQuantity}}">
+                    </td>
+                </tr>
+                <tr>
+                    <th>Order Product</th>
+                    <td>
+                        <ul>
+                            <li>{{data.orderProduct.productNumber}}</li>
+                            <li>{{data.orderProduct.productName}}</li>
+                            <li>{{data.orderProduct.productDescription}}</li>
+                            <li>{{data.orderProduct.productPrice}}</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Order Customer: </th>
+                    <td>{{data.orderCustomer}}</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="submit" value="Save" class="btn btn-success">
+                        <input type="button" value="Cancel" class="btn btn-danger"
+                            class="cancel" onclick="cancelEdit()">
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </form>
+</div>
